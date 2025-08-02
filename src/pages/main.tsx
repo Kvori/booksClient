@@ -13,6 +13,7 @@ import {
 import { useInfiniteQuery, type InfiniteData } from '@tanstack/react-query'
 import { getBooksList, type GetBooksListProps } from '../http/booksListAPI'
 import { useDebouncedValue } from '../hooks/useDebouncedValue'
+import './style.css'
 
 export interface Book {
     id: number
@@ -221,14 +222,10 @@ const HomePage = () => {
                                 <Row className="mb-3">
                                     <Col xs={12} md={3}>
                                         <div
-                                            className="w-100 h-100"
+                                            className="w-100 h-100 img-bg d-flex justify-content-center align-content-center"
                                             style={{
                                                 maxWidth: 300,
                                                 maxHeight: 400,
-                                                backgroundPosition: 'center',
-                                                backgroundImage: `./img_default.png`,
-                                                backgroundRepeat: 'no-repeat',
-                                                backgroundSize: 'cover',
                                             }}
                                         >
                                             {book.image && (
