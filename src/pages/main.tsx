@@ -226,7 +226,7 @@ const HomePage = () => {
                                                 maxWidth: 300,
                                                 maxHeight: 400,
                                                 backgroundPosition: 'center',
-                                                backgroundImage: `./public/img_default.png`,
+                                                backgroundImage: `./img_default.png`,
                                                 backgroundRepeat: 'no-repeat',
                                                 backgroundSize: 'cover',
                                             }}
