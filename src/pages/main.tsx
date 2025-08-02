@@ -10,7 +10,7 @@ import {
     Spinner,
     Badge,
 } from 'react-bootstrap'
-import { useInfiniteQuery } from '@tanstack/react-query'
+import { useInfiniteQuery, type InfiniteData } from '@tanstack/react-query'
 import { getBooksList, type GetBooksListProps } from '../http/booksListAPI'
 import { useDebouncedValue } from '../hooks/useDebouncedValue'
 
@@ -24,6 +24,12 @@ export interface Book {
     likes: number
     reviewsCount: number
     reviews: { author: string; text: string }[]
+}
+
+interface BooksPage {
+    books: Book[]
+    hasMore: boolean
+    nextPage: number
 }
 
 const HomePage = () => {
@@ -58,9 +64,9 @@ const HomePage = () => {
         status,
         error,
     } = useInfiniteQuery<
-        { books: Book[]; hasMore: boolean; nextPage: number },
+        BooksPage,
         Error,
-        { books: Book[]; hasMore: boolean; nextPage: number },
+        InfiniteData<BooksPage>,
         [string, GetBooksListProps],
         number
     >({
