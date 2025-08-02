@@ -13,7 +13,6 @@ import {
 import { useInfiniteQuery, type InfiniteData } from '@tanstack/react-query'
 import { getBooksList, type GetBooksListProps } from '../http/booksListAPI'
 import { useDebouncedValue } from '../hooks/useDebouncedValue'
-import './style.css'
 
 export interface Book {
     id: number
@@ -236,11 +235,17 @@ const HomePage = () => {
                                                         maxHeight: 400,
                                                         objectFit: 'cover',
                                                     }}
-                                                    src={book.image}
+                                                    src={book.image || 'img_default.png'}
                                                     alt="Book cover"
                                                     fluid
                                                     rounded
+                                                    onError={(e) => {
+                                                        const target = e.target as HTMLImageElement;
+                                                        target.onerror = null;
+                                                        target.src = 'img_default.png';
+                                                    }}
                                                 />
+
                                             )}
                                         </div>
                                     </Col>
