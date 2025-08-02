@@ -226,7 +226,7 @@ const HomePage = () => {
                                                 maxWidth: 300,
                                                 maxHeight: 400,
                                                 backgroundPosition: 'center',
-                                                backgroundImage: `../../public/img_default.png`,
+                                                backgroundImage: `./public/img_default.png`,
                                                 backgroundRepeat: 'no-repeat',
                                                 backgroundSize: 'cover',
                                             }}
@@ -237,7 +237,7 @@ const HomePage = () => {
                                                     style={{
                                                         maxWidth: 300,
                                                         maxHeight: 400,
-                                                        objectFit: 'contain',
+                                                        objectFit: 'cover',
                                                     }}
                                                     src={book.image}
                                                     alt="Book cover"
