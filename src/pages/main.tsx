@@ -193,7 +193,7 @@ const HomePage = () => {
                 </Row>
             </Form>
 
-            <ListGroup variant="flush">
+            <ListGroup variant="flush" className="position-relative">
                 <ListGroup.Item className="fw-bold bg-light mb-1">
                     <Row>
                         <Col xs={1}>ID</Col>
@@ -322,8 +322,13 @@ const HomePage = () => {
                         <Spinner animation="border" />
                     </div>
                 )}
+                <div ref={observerRef} style={{
+                    position: "absolute",
+                    bottom: 1,
+                    height: '1px',
+                    opacity: 0
+                }} />
             </ListGroup>
-            <div ref={observerRef} style={{ height: '1px' }} />
             {isFetchingNextPage && (
                 <div className="text-center my-3">
                     <Spinner animation="border" />
