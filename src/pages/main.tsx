@@ -194,7 +194,7 @@ const HomePage = () => {
             </Form>
             <ListGroup variant="flush" className="position-relative">
                 <ListGroup.Item className="fw-bold bg-light">
-                    <Row>
+                    <Row className='w-100'>
                         <Col xs={1}>ID</Col>
                         <Col xs={2}>ISBN</Col>
                         <Col xs={3}>Title</Col>
@@ -203,7 +203,7 @@ const HomePage = () => {
                     </Row>
                 </ListGroup.Item>
                 {allBooks.map((book: Book) => (
-                    <ListGroup.Item>
+                    <ListGroup.Item className='p-0'>
                         <Accordion key={book.id} flush>
                             <Accordion.Item eventKey="0">
                                 <Accordion.Header>
